@@ -17,7 +17,7 @@ Description: 这是xxxxx文件
 Author: liu.yan
 Date: 2022-02-15 16:54:10
 LastEditors: liu.yan
-LastEditTime: 2022-02-16 15:18:29
+LastEditTime: 2022-02-17 19:08:48
 '''
 
 from datetime import datetime
@@ -47,4 +47,4 @@ class PhoneInfo(db.Model):
     phone_num = db.Column(db.Integer)
     created_at = db.Column('createdAt', db.TIMESTAMP, nullable=False, default=datetime.now())
     updated_at = db.Column('updatedAt', db.TIMESTAMP, nullable=False, default=datetime.now())
-db.create_all()
+# db.create_all()
