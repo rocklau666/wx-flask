@@ -17,7 +17,7 @@ Description: 这是xxxxx文件
 Author: liu.yan
 Date: 2022-02-16 15:16:30
 LastEditors: liu.yan
-LastEditTime: 2022-02-17 19:24:02
+LastEditTime: 2022-02-17 19:32:33
 '''
 
 import logging
@@ -35,11 +35,11 @@ APPID="wx254cb79ac986f686"
 APPSECRET="be69fe7f254b33d1a1336f95fb5dea97"
 
 def token_get():
-    response = requests.get("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+APPID+"&secret="+APPSECRET)
+    response = requests.get("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+APPID+"&secret="+APPSECRET,verify=False)
     return response
 def login_info_get(JSCODE):
     logger.info(JSCODE)
-    res=requests.post("https://api.weixin.qq.com/sns/jscode2session?appid="+APPID+"&secret="+APPSECRET+"&js_code="+JSCODE+"&grant_type=authorization_code")
+    res=requests.post("https://api.weixin.qq.com/sns/jscode2session?appid="+APPID+"&secret="+APPSECRET+"&js_code="+JSCODE+"&grant_type=authorization_code",verify=False)
     print(res.text)
   
     r=res.text
