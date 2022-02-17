@@ -17,7 +17,7 @@ Description: 这是xxxxx文件
 Author: liu.yan
 Date: 2022-02-15 16:54:10
 LastEditors: liu.yan
-LastEditTime: 2022-02-16 17:32:17
+LastEditTime: 2022-02-17 19:24:34
 '''
 
 from datetime import datetime
@@ -144,4 +144,5 @@ def wx_login():
     # 按照不同的action的值，进行不同的操作
     res = json.loads(login_info_get(params["js_code"]))
     print(res)
+    
     return make_succ_response("") if res is None else make_succ_response(res)
